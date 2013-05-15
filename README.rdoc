@@ -1,0 +1,3 @@
+Tutorial Creator
+
+This app is used to create different types of tutorials.  It requires a name and description field that you type in and then allows you to add a step by step instruction into your how to list.
