@@ -1,0 +1,23 @@
+<%= form_for(@tutorial) do |f| %>
+	<%= if @tutorial.errors.full_messages.each do|msg| %>
+		<p><%= msg %></p>
+		<% end %>
+	<% end %>
+	<table>
+		<tr>
+			<td>Title</td>
+		</tr>
+		<tr>
+			<td><%= f.text_field :title, {:id=>"title"} %></td>
+		</tr>
+		<tr>
+			<td>Description</td>
+		</tr>
+		<tr>
+			<td><%= f.text_area :description, {:id=>"description"} %></td>
+		</tr>
+		<tr>
+			<td><%= f.submit 'Create' %></td>
+		</tr>
+	</table>
+<% end %>
