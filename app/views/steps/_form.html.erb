@@ -1,0 +1,18 @@
+<%= form_for([@tutorial, @step]) do |f| %>
+	<% if @step.errors.present? %>
+	<%	@step.errors.full_message.each do |attribute, msg| %>
+			<p><%= msg %></p>
+		<% end %>
+	<% end %>
+	<table>
+		<tr>
+			<td>Description</td>
+		</tr>
+		<tr>
+			<td><%= f.text_area :description, {:id=>'description'} %></td>
+		</tr>
+		<tr>
+			<td><%= f.submit "Create" %></td>
+		</tr>
+	</table>
+<% end %>

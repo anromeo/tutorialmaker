@@ -8,5 +8,6 @@ feature do
 		fill_in 'description', :with => "Short Summary"
 		click_button 'Create'
 		page.should have_content("Your Tutorial is ready to be created")
+		page.should have_content("+ Steps")
 	end
 end

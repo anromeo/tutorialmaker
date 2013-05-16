@@ -1,5 +1,5 @@
-<%= form_for(@tutorial) do |f| %>
-	<%= if @tutorial.errors.full_messages.each do|msg| %>
+<%= form_for(@tutorial) do|f| %>
+	<% if @tutorial.errors.full_messages.each do|msg| %>
 		<p><%= msg %></p>
 		<% end %>
 	<% end %>

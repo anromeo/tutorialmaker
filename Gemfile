@@ -42,9 +42,12 @@ gem 'twitter-bootstrap-rails'
 
 group :test, :development do
 	gem 'rspec-rails', '~> 2.11'
+	gem 'launchy'
 end
 
 group :test do
 	gem 'capybara', '1.1.2'
 	gem 'factory_girl', '2.6.4'
+	gem 'pry-rails'
+	gem 'pry-debugger'
 end
