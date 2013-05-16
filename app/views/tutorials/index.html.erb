@@ -1,1 +1,13 @@
-<%= link_to "+ Tutorial", new_tutorial_path %>
+<%= link_to "+ Tutorial", new_tutorial_path, {:class=>"btn fancybox", :float=>"right"} %>
+	<% @tutorials.each do|tutorial| %>
+	<div>
+		<table class="table">
+				<tr>
+					<td><h2><%= link_to tutorial.title, tutorial %></h2></td>
+				</tr>
+				<tr>
+					<td><%= tutorial.description %></td>
+				</tr>
+		</table>
+	</div>
+	<% end %>

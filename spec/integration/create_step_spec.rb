@@ -14,5 +14,6 @@ feature do
 		fill_in 'description', :with => "This is how you do it"
 		click_button 'Create'
 		page.should have_content('Your step has been added')
+		page.should have_content('This is how you do it')
 	end
 end

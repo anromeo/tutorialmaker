@@ -1,1 +1,15 @@
-<%= link_to "+ Steps", new_tutorial_step_path(@tutorial) %>
+<h2><%= @tutorial.title %></h2>
+<p><%= @tutorial.description %></p>
+<% @counter = 1 %>
+<%= link_to "Edit Tutorial", edit_tutorial_path(@tutorial), {:class=>"btn"} %>
+<%= link_to "+ Steps", new_tutorial_step_path(@tutorial), {:class=>"btn"} %>
+	<table class="table">
+<% @tutorial.steps.each do |step| %>
+		<tr>
+			<td width="20"><b><%= @counter %>.</b></td>
+			<td align="left"><%= step.description %></td>
+			<td align="right"><%= link_to "Edit", [:edit, @tutorial, step ] %></td>
+		</tr>
+	<% @counter += 1 %>
+<% end %>
+	</table>

@@ -1,10 +1,37 @@
 class TutorialsController < ApplicationController
+
 	def new
 		@tutorial = Tutorial.new
 	end
 
+	def edit
+		@tutorial = Tutorial.find(params[:id])
+	end
+
 	def show
 		@tutorial = Tutorial.find(params[:id])
+	end
+
+	def index
+		@tutorials = Tutorial.all
+    respond_to do |format|
+      format.html # index.html.erb
+      format.json { render json: @tutorials }
+    end
+	end
+
+	def update
+		@tutorial = Tutorial.find(params[:id])
+
+    respond_to do |format|
+      if @tutorial.update_attributes(params[:tutorial])
+        format.html { redirect_to @tutorial, notice: 'Link was successfully updated.' }
+        format.json { head :no_content }
+      else
+        format.html { render action: "edit" }
+        format.json { render json: @tutorial.errors, status: :unprocessable_entity }
+      end
+    end
 	end
 
 	def create

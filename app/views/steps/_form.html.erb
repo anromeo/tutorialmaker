@@ -12,7 +12,11 @@
 			<td><%= f.text_area :description, {:id=>'description'} %></td>
 		</tr>
 		<tr>
-			<td><%= f.submit "Create" %></td>
+			<td><%= if @enter
+								f.submit 'Edit'
+							else
+								f.submit 'Create'
+							end %></td>
 		</tr>
 	</table>
 <% end %>
